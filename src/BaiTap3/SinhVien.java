@@ -14,15 +14,18 @@ import java.util.Date;
  */
 public class SinhVien {
     String ten;
-    String ngaySinh;
+    Date ngaySinh;
     float diemTB;
+    
     SimpleDateFormat  ft = new SimpleDateFormat("dd.MM.yyyy");
 
-    public SinhVien(String ten, String ngaySinh, float diemTB) {
+    public SinhVien(String ten, Date ngaySinh, float diemTB) {
         this.ten = ten;
         this.ngaySinh = ngaySinh;
         this.diemTB = diemTB;
     }
+
+    
 
     public String getTen() {
         return ten;
@@ -32,11 +35,11 @@ public class SinhVien {
         this.ten = ten;
     }
 
-    public String getNgaySinh() {
+    public Date getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(String ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
@@ -50,7 +53,7 @@ public class SinhVien {
     public void display()
     {
         System.out.println("Ten: " + ten +"\n" +
-                            "Ngay Sinh: " + ngaySinh + "\n" +
+                            "Ngay Sinh: " + ft.format(ngaySinh) + "\n" +
                             "Diem TB: "+ diemTB + "\n"
                 
                 );

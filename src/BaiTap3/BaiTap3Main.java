@@ -8,6 +8,7 @@ package BaiTap3;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -21,11 +22,15 @@ public class BaiTap3Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(1998, 7, 20);
+        Date date = calendar.getTime();
+        calendar.set(1998,9,10);
+        Date date1 = calendar.getTime();
         ArrayList<SinhVien> list = new ArrayList<>();
         QLSV ql = new QLSV();
-        list.add(new SinhVien("Huynh", "20-08-1998",(float) 9.5));
-        list.add(new SinhVien("Kha", "10-10-1998", (float)8));
+        list.add(new SinhVien("Huynh",date ,(float) 9.5));
+        list.add(new SinhVien("Kha", date1, (float)8));
         ql.inDS(list);
         
         
